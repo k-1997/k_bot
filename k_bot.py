@@ -1,3 +1,7 @@
+%pip install -U langchain-openai
+%pip install -U langchain-community
+%pip install streamlit langchain pypdf python-docx
+
 import streamlit as st
 from langchain.schema import Document
 from langchain.text_splitter import CharacterTextSplitter
