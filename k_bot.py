@@ -60,7 +60,12 @@ if st.button("Get Answer"):
             st.write("Documents processed and split into chunks.")
 
             embeddings = OpenAIEmbeddings()
-            knowledge_base = Chroma.from_documents(document_chunks, embeddings,persist_directory=None)
+            knowledge_base = Chroma.from_documents(
+                document_chunks,
+                embeddings,
+                persist_directory=None,
+                collection_name="in_memory_collection"
+            )
             st.write("Knowledge base created successfully.")
 
             llm = ChatOpenAI(model_name="gpt-3.5-turbo")
