@@ -7,7 +7,7 @@ from langchain.schema import Document
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader, Docx2txtLoader
 from langchain_community.embeddings import OpenAIEmbeddings
-from langchain_community.vectorstores import Chroma
+from langchain_community.vectorstores import FAISS
 from langchain.chains import RetrievalQA
 from langchain_openai import ChatOpenAI
 import tempfile
@@ -60,7 +60,7 @@ if st.button("Get Answer"):
             st.write("Documents processed and split into chunks.")
 
             embeddings = OpenAIEmbeddings()
-            knowledge_base = Chroma.from_documents(
+            knowledge_base = FAISS.from_documents(
                 document_chunks,
                 embeddings,
                 persist_directory=None,
