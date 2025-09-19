@@ -13,8 +13,6 @@ from langchain_openai import ChatOpenAI
 import tempfile
 import os
 
-Chroma(persist_directory=None, ...)
-
 st.title("Document Chatbot")
 
 # Initialize chat history
