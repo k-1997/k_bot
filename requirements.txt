@@ -5,3 +5,4 @@ langchain-community
 pypdf
 python-docx
 chromadb
+Chroma(persist_directory=None, ...)
